@@ -46,16 +46,6 @@ In the cell below, load the json data into a python dictionary.
 
 ```python
 # Import the json python package
-# YOUR CODE HERE
-
-# Load in the data
-# YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
-# Import the json python package
 import json
 
 # Load in the data
@@ -76,21 +66,6 @@ In the cell below, evaluate
 
 
 ```python
-# Replace None with your code!
-
-# Find the datatype for the overall dataset
-dataset_type = None
-# Isolate the first observation
-first_observation = None
-# Find the datatype for the first observation
-observation_type = None
-# How many observations are there
-num_observations = None
-```
-
-
-```python
-#__SOLUTION__
 # Find the datatype for the overall dataset
 dataset_type = type(restaurants)
 # Isolate the first observation
@@ -141,70 +116,12 @@ print('==========================================')
     ==========================================
 
 
-
-```python
-#__SOLUTION__
-from pprint import pprint
-
-print(f'The dataset is a \033[1m{dataset_type}\033[0m')
-print(f'The observations are a \033[1m{observation_type}\033[0m',)
-print(f'There are \033[1m{num_observations} observations.\033[0m')
-print('\033[1m\nThe first observation:\033[0m')
-print('==========================================')
-pprint(first_observation)
-print('==========================================')
-```
-
-    The dataset is a [1m<class 'list'>[0m
-    The observations are a [1m<class 'dict'>[0m
-    There are [1m1000 observations.[0m
-    [1m
-    The first observation:[0m
-    ==========================================
-    {'latitude': 40.72308755605564,
-     'location': {'address1': '27 Prince St',
-                  'address2': None,
-                  'address3': '',
-                  'city': 'New York',
-                  'country': 'US',
-                  'display_address': ['27 Prince St', 'New York, NY 10012'],
-                  'state': 'NY',
-                  'zip_code': '10012'},
-     'longitude': -73.99453001177575,
-     'name': 'Prince Street Pizza',
-     'phone': '+12129664100',
-     'price': '\\$',
-     'rating': 4.5,
-     'review_count': 3976,
-     'transactions': ['delivery', 'pickup']}
-    ==========================================
-
-
 ## Find the possible rating options. 
 
 In the cell below, create a variable called `rating_options` that has a [set datatype](https://realpython.com/python-sets/), and is a unique collection of the possible ratings a restaurant can recieve.
 
 
 ```python
-# Create the `rating_options` variable
-rating_options = None
-
-# Loop over all of the observations in the dataset
-
-
-    # Isolate the rating for the restaurant
-    # YOUR CODE HERE
-    
-    # Add the rating to 
-    # the `rating_options` variable
-    # YOUR CODE HERE
-    
-rating_options
-```
-
-
-```python
-#__SOLUTION__
 # Create the `rating_options` variable
 rating_options = set()
 
@@ -236,44 +153,12 @@ assert len(rating_options) == 8
 assert list(rating_options)[0] != list(rating_options)[1]
 ```
 
-
-```python
-#__SOLUTION__
-assert type(rating_options) == set
-assert len(rating_options) == 8
-assert list(rating_options)[0] != list(rating_options)[1]
-```
-
 ## Plot the distribution for ratings
 
 Now that you know what rating options are available, in the cell below plot a histogram showing the distribution of ratings. 
 
 
 ```python
-# Import matplotlib's pyplot module
-
-# Create an empty list.
-# We will store all ratings in this list
-ratings = None
-
-# Loop over every restaurant in the dataset
-# YOUR CODE HERE
-
-    # Isolate the rating
-    # YOUR CODE HERE
-    # Append the rating to the `ratings` list
-    # YOUR CODE HERE
-
-# Create a matplotlib subplot
-# YOUR CODE HERE
-
-# Plot a histogram of the ratings list
-# YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Import matplotlib's pyplot module
 import matplotlib.pyplot as plt
 
@@ -295,12 +180,11 @@ ax.hist(ratings);
 ```
 
 
-![png](README_files/README_18_0.png)
+![png](README_files/README_12_0.png)
 
 
 **Interpret the ratings histogram. How does the visualization relate to your client's claims?**
 
-==SOLUTION==
 
 The `ratings` histogram shows us that Yelp ratings are centered around `4.0` and the majority of restaurants have a rating between `3.5` and `4.5`. 
 
@@ -314,26 +198,6 @@ In the cell below, filter out all restaurants that do not have a rating of at le
 
 
 ```python
-# Create an empty list
-# You will store restaurants in this list
-above_average = None
-
-# Loop over the dataset
-# YOUR CODE HERE
-
-    # Isolate the rating
-    # YOUR CODE HERE
-    
-    # Check if the rating is at least 4.5
-    # YOUR CODE HERE
-        # If the rating is at least 4.5
-        # Add the restaurant to the list
-        # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty list
 # You will store restaurants in this list
 above_average = []
@@ -359,14 +223,6 @@ assert type(above_average[0]) == dict
 assert len(above_average) == 306
 ```
 
-
-```python
-#__SOLUTION__
-assert type(above_average) == list
-assert type(above_average[0]) == dict
-assert len(above_average) == 306
-```
-
 ## Isolate restaurants with a below average rating
 
 Now repeat the process for below average ratings.
@@ -375,27 +231,6 @@ In the cell below, isolate restaurants that have a rating of no more than `3.5`.
 
 
 ```python
-# Create an empty list
-# You will store restaurants in this list
-below_average = None
-
-# Loop over the restaurants in the dataset
-# YOUR CODE HERE
-
-    # Isolate the rating
-    # YOUR CODE HERE
-    
-    # Check if the rating is no more than 3.5
-    # YOUR CODE HERE
-    
-        # If the rating no more than 3.5
-        # Add the restaurant to the list
-        # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty list
 # You will store restaurants in this list
 below_average = []
@@ -421,14 +256,6 @@ assert type(below_average[0]) == dict
 assert len(below_average) == 247
 ```
 
-
-```python
-#__SOLUTION__
-assert type(below_average) == list
-assert type(below_average[0]) == dict
-assert len(below_average) == 247
-```
-
 ## Calculate average review counts for both groups
 
 Now that you've isolated above average and below average restaurants, you can calculate the average number of reviews received by both groups.
@@ -449,35 +276,6 @@ This function should:
 
 
 ```python
-def isolate_values(dictionaries, key):
-    # Create an empty list
-    # for storing data
-    # YOUR CODE HERE
-    
-    # Loop over every dicionary 
-    # YOUR CODE HERE
-        
-        # Isolate the value of the dictionary with the `key`
-        # YOUR CODE HERE
-        
-        # Append the value to the list
-        # YOUR CODE HERE
-    
-    # Return the list of values
-    # YOUR CODE HERE
-```
-
-
-      File "<ipython-input-18-031c9061accf>", line 16
-        # YOUR CODE HERE
-                        ^
-    SyntaxError: unexpected EOF while parsing
-
-
-
-
-```python
-#__SOLUTION__
 def isolate_values(dictionaries, key):
     # Create an empty list
     # for storing data
@@ -510,29 +308,10 @@ assert len(isolate_values(above_average, 'name')) == len(above_average)
 assert isolate_values(above_average, 'name')[-1] == above_average[-1]['name']
 ```
 
-
-```python
-#__SOLUTION__
-from types import FunctionType
-
-assert type(isolate_values) == FunctionType
-assert type(isolate_values([{'test': 1}], 'test')) == list
-assert len(isolate_values([{'test': 1}], 'test')) == 1
-assert len(isolate_values(above_average, 'name')) == len(above_average)
-assert isolate_values(above_average, 'name')[-1] == above_average[-1]['name']
-```
-
 Now use the `isolate_values` function to create a list called `abv_avg_rev_cnts` that contains the review counts for every above average restaurant.
 
 
 ```python
-# Replace None with your code
-abv_avg_rev_cnts = None
-```
-
-
-```python
-#__SOLUTION__
 abv_avg_rev_cnts = isolate_values(above_average, 'review_count')
 ```
 
@@ -540,13 +319,6 @@ Now use the `isolate_values` function to create a list called `blw_avg_rev_cnts`
 
 
 ```python
-# Replace None with your code
-blw_avg_rev_cnts = None
-```
-
-
-```python
-#__SOLUTION__
 blw_avg_rev_cnts = isolate_values(below_average, 'review_count')
 ```
 
@@ -555,19 +327,6 @@ Run the next cell unchanged to test your work!
 
 
 ```python
-assert type(abv_avg_rev_cnts) == list
-assert type(abv_avg_rev_cnts[0]) == int
-assert type(blw_avg_rev_cnts) == list
-assert type(blw_avg_rev_cnts[0]) == int
-assert len(abv_avg_rev_cnts) == len(above_average)
-assert len(blw_avg_rev_cnts) == len(below_average)
-assert abv_avg_rev_cnts[101] == above_average[101]['review_count']
-assert blw_avg_rev_cnts[101] == below_average[101]['review_count']
-```
-
-
-```python
-#__SOLUTION__
 assert type(abv_avg_rev_cnts) == list
 assert type(abv_avg_rev_cnts[0]) == int
 assert type(blw_avg_rev_cnts) == list
@@ -608,36 +367,11 @@ ax[1].set_title("Above Average - Review Counts");
 ```
 
 
-```python
-#__SOLUTION__
-# Initialize a matplotlib subplot
-# with 1 row and 2 columns
-fig, ax = plt.subplots(1,2, figsize=(15,6))
-
-# Plot a histogram of below average review counts
-# on the first axis
-ax[0].hist(blw_avg_rev_cnts)
-
-# Set the title for the first axis
-# to "Below Average - Review Counts"
-ax[0].set_title("Below Average - Review Counts")
-
-# Plot a histogram of above average review counts
-# on the first axis
-ax[1].hist(abv_avg_rev_cnts)
-
-# Set the title for the first axis
-# to "Above Average - Review Counts"
-ax[1].set_title("Above Average - Review Counts");
-```
-
-
-![png](README_files/README_50_0.png)
+![png](README_files/README_34_0.png)
 
 
 **Interpret the above visualizations. What statistic is best suited for these data?**
 
-==SOLUTION==
 
 The above distributions both have significant outliers in the positive direction. The vast majority of review counts are between 0 and 1000 for restaurants with a below average rating, and between 0 and ~800 for restaurants with an above average rating. Given how skewed these data are, a median is a better measure of centrality.
 
@@ -645,24 +379,6 @@ In the cell below, calculate the average review count for above average and belo
 
 
 ```python
-# Import numpy
-# YOUR CODE HERE
-
-# Replace None with your code
-abv_avg_rev_cnt_center = None
-blw_avg_rev_cnt_center = None
-
-print('Above average review count:', abv_avg_rev_cnt_center)
-print('Below average review count:', blw_avg_rev_cnt_center)
-```
-
-    Above average review count: None
-    Below average review count: None
-
-
-
-```python
-#__SOLUTION__
 # Import numpy
 import numpy as np
 
@@ -674,25 +390,12 @@ print('Above average center review count:', abv_avg_rev_cnt_center)
 print('Below average center review count:', blw_avg_rev_cnt_center)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-2-793814bafe55> in <module>
-          4 
-          5 # Replace None with your code
-    ----> 6 abv_avg_rev_cnt_center = np.median(abv_avg_rev_cnts)
-          7 blw_avg_rev_cnt_center = np.median(blw_avg_rev_cnts)
-          8 
-
-
-    NameError: name 'abv_avg_rev_cnts' is not defined
+    Above average center review count: 65.5
+    Below average center review count: 168.0
 
 
 **Interpret the average review count for both groups. How does this relate to your client's claims?**
 
-==SOLUTION==
 
 Restaurants with a low average rating, on average have ~100 more reviews than Restaurants with an above average rating. My client's claim that more reviews = better ratings is not supported by the data.
 
@@ -704,31 +407,6 @@ In the cell below, write a for loop that counts how frequently a given price poi
 
 
 ```python
-# Create an empty dictionary to store the
-# counts for each price point
-abv_avg_prices = {}
-
-# Loop over the above average restaurants
-# YOUR CODE HERE
-
-    # Isolate the price point for the restuarant
-    # YOUR CODE HERE
-    
-    # Check if the price has been added to the dictionary
-    # YOUR CODE HERE
-    
-            # If the price is already a key in the dictionary
-            # Add one to the count for that price point
-            # YOUR CODE HERE
-            
-    # If the price has not been added to the dictionary
-    # Else set the price as the key and the value as the integer `1`
-    # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty dictionary to store the
 # counts for each price point
 abv_avg_prices = {}
@@ -758,43 +436,10 @@ assert len(abv_avg_prices) == 5
 assert '\\$\\$\\$\\$' in abv_avg_prices
 ```
 
-
-```python
-#__SOLUTION__
-assert type(abv_avg_prices) == dict
-assert len(abv_avg_prices) == 5
-assert '\\$\\$\\$\\$' in abv_avg_prices
-```
-
 **Now reapply the same process, but instead calculate the price point frequencies for the `below_average` dataset.**
 
 
 ```python
-# Create an empty dictionary to store the
-# counts for each price point
-# YOUR CODE HERE
-
-# Loop over the below average restaurants
-# YOUR CODE HERE
-
-    # Isolate the price point for the restuarant
-    # YOUR CODE HERE
-    
-    # Check if the price has been added to the dictionary
-    # YOUR CODE HERE
-    
-            # If the price is already a key in the dictionary
-            # Add one to the count for that price point
-            # YOUR CODE HERE
-            
-    # If the price has not been added to the dictionary
-    # Set the price as the key and the value as the integer `1`
-    # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty dictionary to store the
 # counts for each price point
 blw_avg_prices = {}
@@ -824,57 +469,10 @@ assert len(blw_avg_prices) == 4
 assert '\\$' in blw_avg_prices
 ```
 
-
-```python
-#__SOLUTION__
-assert type(blw_avg_prices) == dict
-assert len(blw_avg_prices) == 4
-assert '\\$' in blw_avg_prices
-```
-
 ## Create a bar plot that sets the frequency of each price point as the y axis
 
 
 ```python
-# Create a matplotlib subplot with 1 row and 2 columns
-# YOUR CODE HERE
-
-# Isolate keys of the below average price count dictionary
-# This will be the x-axis
-# YOUR CODE HERE
-
-# Isolate the values of the below average price count dictionary
-# This will be the y-axis
-# YOUR CODE HERE
-
-# Plot the below average price point counts as a bar plot
-# on the first axis
-# YOUR CODE HERE
-
-# Set the title for the first axis
-# to the string "Below Average"
-# YOUR CODE HERE
-
-# Isolate keys of the above average price count dictionary
-# This will be the x-axis
-# YOUR CODE HERE
-
-# Isolate the values of the above average price count dictionary
-# This will be the y-axis
-# YOUR CODE HERE
-
-# Plot the above average price counts as a bar plot
-# on the second axis
-# YOUR CODE HERE
-
-# Set the title for the second axis to 
-# the string 'Above Average'
-# YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create a matplotlib subplot with 1 row and 2 columns
 fig, ax = plt.subplots(1, 2, figsize=(15,6))
 
@@ -912,12 +510,11 @@ ax[1].set_title('Above Average');
 ```
 
 
-![png](README_files/README_72_0.png)
+![png](README_files/README_50_0.png)
 
 
 **Interpret the above visualization. How does it relate to your client's claims?**
 
-==SOLUTION==
 
 The above visualization shows that the least expensive price point `$` is the most frequent option for restaurants with a below average rating, and that the price option `Unknown` is the most common for restaurants with an above average rating. My client claims that the price option `$$` is the most common price option for above average restaurants. While this visualization suggests that my client's claim is incorrect, the `$$` price option _is_ the second most frequent price point for above average restaurants. If my clients goal is to align their price options with more above average restaurants a move from `$` to `$$` is justified. I am, however, unable to identify the most commmon price option for above average rated restaurants due to missing data. Further investigating is required.
 
@@ -927,33 +524,6 @@ In the cell below, use the `isolate_values` function to isolate `longitude` and 
 
 
 ```python
-# Replace None with your code
-
-# Isolate longitude for above average restaurants
-abv_avg_lon = None
-
-# Isolate latitude for above average restaurants
-abv_avg_lat = None
-
-# Isolate longitude for below average restaurants
-blw_avg_lon = None
-
-# Isolate latitude for below average restaurants
-blw_avg_lat = None
-
-plt.figure(figsize=(15,6))
-plt.scatter(abv_avg_lon, abv_avg_lat, label='Above')
-plt.scatter(blw_avg_lon, blw_avg_lat, label='Below')
-plt.legend();
-```
-
-
-![png](README_files/README_76_0.png)
-
-
-
-```python
-#__SOLUTION__
 # Isolate longitude for above average restauransts
 abv_avg_lon = isolate_values(above_average, 'longitude')
 
@@ -973,7 +543,7 @@ plt.legend();
 ```
 
 
-![png](README_files/README_77_0.png)
+![png](README_files/README_54_0.png)
 
 
 ## Remove the outlier
@@ -982,34 +552,6 @@ There is one restaurant in the above average dataset with a location dramaticall
 
 
 ```python
-# Create an empty list
-# that will contain data with
-# the outlier removed
-no_outliers = # YOUR CODE HERE
-
-# Create an empty list to append the outlier
-outlier = # YOUR CODE HERE
-
-# Loop over every restaurant in the above average dataset
-# YOUR CODE HERE
-    
-    # Isolate the restaurant's longitude
-    # YOUR CODE HERE
-    
-    # Check if the longitude value is greater than the integer -90
-    # YOUR CODE HERE
-        
-        # Append the restaurant to the no_outliers list
-        # YOUR CODE HERE
-        
-    # If longitude is less than -90 it is an outlier
-    # and should be appended to the outlier list
-    # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty list
 # that will contain data with
 # the outlier removed
@@ -1047,31 +589,10 @@ assert len(no_outliers) == len(above_average) - 1
 assert len(outlier) == 1
 ```
 
-
-```python
-#__SOLUTION__
-assert type(no_outliers) == list
-assert type(outlier) == list
-assert len(no_outliers) == len(above_average) - 1
-assert len(outlier) == 1
-```
-
 Now regenerate the longitude and latitude for above average restaurants using the `no_outliers` dataset, and regenerate the scatter plot!
 
 
 ```python
-abv_avg_lon = None
-abv_avg_lat = None
-
-plt.figure(figsize=(15,6))
-plt.scatter(abv_avg_lon, abv_avg_lat, label='Above')
-plt.scatter(blw_avg_lon, blw_avg_lat, label='Below')
-plt.legend();
-```
-
-
-```python
-#__SOLUTION__
 abv_avg_lon = isolate_values(no_outliers, 'longitude')
 abv_avg_lat = isolate_values(no_outliers, 'latitude')
 
@@ -1082,7 +603,7 @@ plt.legend();
 ```
 
 
-![png](README_files/README_86_0.png)
+![png](README_files/README_60_0.png)
 
 
 Nice. This is much more interesting. 
@@ -1093,41 +614,6 @@ To get a better sense about how latitude and longitude are working, in the cell 
 
 
 ```python
-# Create a matplotlib subplot with 1 row and 2 columns
-# YOUR CODE HERE
-
-# Plot a histogram of above average longitude
-# on the first subplot axis. Set alpha to .6
-# Set label to the string "Above"
-# YOUR CODE HERE
-
-# Plot a histogram of below average longitude
-# on the first subplot axis. Set alpha to .6
-# Set label to the string "Below"
-# YOUR CODE HERE
-
-# Set the title for the first subplot axis
-# to the string "Longitude"
-# YOUR CODE HERE
-
-# Plot a histogram of above average latitude
-# on the second subplot axis. Set alpha to .6
-# Set label to the string "Above"
-# YOUR CODE HERE
-
-# Plot a histogram of below average latitude
-# on the second subplot axis. Set alpha to .6
-# Set label to the string "Below"
-# YOUR CODE HERE
-
-# Set the title for the second subplot axis
-# to the string "Latitude"
-# YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create a matplotlib subplot with 1 row and 2 columns
 fig, ax = plt.subplots(1,2, figsize=(15,6))
 
@@ -1165,12 +651,11 @@ ax[1].legend();
 ```
 
 
-![png](README_files/README_90_0.png)
+![png](README_files/README_63_0.png)
 
 
 **Interpret the above visualization. How does it relate to your client's claims?**
 
-==SOLUTION==
 
 The above visualization shows that above average rated restaurants are centered slightly more to the east than below average rating restaurants. Both distributions appear to be largley centered in the same place when it comes to latitude (north --> south). My client's claim that above average restaurants are further east is supported by this visualization, though the difference is quite small. This visualization refutes my client's claim that north vs southern placement is a good seperator for above average and below average rated restaurants.
 
@@ -1180,31 +665,6 @@ In the cell below, loop over the restaurants in the above average dataset and co
 
 
 ```python
-# Create an empty dictionary
-# This dictionary will hold the counts
-# for each zipcode
-abv_avg_zip_cnts = # YOUR CODE HERE
-
-# Loop over the above average dataset
-# YOUR CODE HERE
-    
-    # Isolate the restaurant's zipcode 
-    # YOUR CODE HERE
-    
-    # Check if the zipcode is a key in the dictionary
-    # YOUR CODE HERE
-        
-        # Add one to the zipcode's value
-        # YOUR CODE HERE
-    
-    # If the zipcode is not a key
-    # add it to the dictionary with a value of 1
-    # YOUR CODE HERE
-```
-
-
-```python
-#__SOLUTION__
 # Create an empty dictionary
 # This dictionary will hold the counts
 # for each zipcode
@@ -1238,26 +698,12 @@ assert len(abv_avg_zip_cnts) == 104 or len(abv_avg_zip_cnts) == 103
 assert '10012' in abv_avg_zip_cnts
 ```
 
-
-```python
-#__SOLUTION__
-assert type(abv_avg_zip_cnts) == dict
-assert len(abv_avg_zip_cnts) == 104 or len(abv_avg_zip_cnts) == 103
-assert '10012' in abv_avg_zip_cnts
-```
-
 Now loop over the `abv_avg_zip_cnts` dictionary and find the zipcode with the largest count. 
 
 For this question, there are multiple ways to find the solution. Comments have not been provided.
 
 
 ```python
-# Your code here
-```
-
-
-```python
-#__SOLUTION__
 
 # SOLUTION 1 - Sort the dictionary
 
@@ -1306,7 +752,6 @@ print('The most common zipcode for above average restaurants:', most_common_zip_
 
 **Interpret the results. How does the most frequent zipcode relate to your client's claims?**
 
-==SOLUTION==
 
 This finding rejects my client's claim. The zipcode containing the most above average restaurants, given that above average is defined as having a rating >= 4.5, is 10014. It is not 10012. 
 
@@ -1314,7 +759,6 @@ This finding rejects my client's claim. The zipcode containing the most above av
 
 You have address all of your client's claims! In the cell below, describe the findings of your analysis.
 
-==SOLUTION==
 
 **This analysis finds** 
 - `4` is average yelp rating in NYC.
