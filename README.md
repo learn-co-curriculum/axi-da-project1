@@ -80,12 +80,12 @@ In the cell below, evaluate
 
 # Find the datatype for the overall dataset
 dataset_type = None
-# Find the datatype for a single observation
+# Isolate the first observation
+first_observation = None
+# Find the datatype for the first observation
 observation_type = None
 # How many observations are there
 num_observations = None
-# Isolate the first observation
-first_observation = None
 ```
 
 
@@ -93,12 +93,12 @@ first_observation = None
 #__SOLUTION__
 # Find the datatype for the overall dataset
 dataset_type = type(restaurants)
-# Find the datatype for a single observation
+# Isolate the first observation
+first_observation = restaurants[0]
+# Find the datatype for the first observation
 observation_type = type(restaurants[0])
 # How many observations are there
 num_observations = len(restaurants)
-# Isolate the first observation
-first_observation = restaurants[0]
 ```
 
 Run this following cell unchanged to print out descriptive information for the dataset!
@@ -195,7 +195,7 @@ rating_options = None
     # Isolate the rating for the restaurant
     # YOUR CODE HERE
     
-    # Add the rating for to 
+    # Add the rating to 
     # the `rating_options` variable
     # YOUR CODE HERE
     
