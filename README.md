@@ -295,9 +295,7 @@ ax.hist(ratings);
 ```
 
 
-    
-![png](README_files/README_18_0.png)
-    
+![png](index_files/index_18_0.png)
 
 
 **Interpret the ratings histogram. How does the visualization relate to your client's claims?**
@@ -634,9 +632,7 @@ ax[1].set_title("Above Average - Review Counts");
 ```
 
 
-    
-![png](README_files/README_50_0.png)
-    
+![png](index_files/index_50_0.png)
 
 
 **Interpret the above visualizations. What statistic is best suited for these data?**
@@ -910,9 +906,7 @@ ax[1].set_title('Above Average');
 ```
 
 
-    
-![png](README_files/README_72_0.png)
-    
+![png](index_files/index_72_0.png)
 
 
 **Interpret the above visualization. How does it relate to your client's claims?**
@@ -948,9 +942,7 @@ plt.legend();
 ```
 
 
-    
-![png](README_files/README_76_0.png)
-    
+![png](index_files/index_76_0.png)
 
 
 
@@ -975,9 +967,7 @@ plt.legend();
 ```
 
 
-    
-![png](README_files/README_77_0.png)
-    
+![png](index_files/index_77_0.png)
 
 
 ## Remove the outlier
@@ -1086,9 +1076,7 @@ plt.legend();
 ```
 
 
-    
-![png](README_files/README_86_0.png)
-    
+![png](index_files/index_86_0.png)
 
 
 Nice. This is much more interesting. 
@@ -1167,9 +1155,7 @@ ax[1].legend();
 ```
 
 
-    
-![png](README_files/README_90_0.png)
-    
+![png](index_files/index_90_0.png)
 
 
 **Interpret the above visualization. How does it relate to your client's claims?**
